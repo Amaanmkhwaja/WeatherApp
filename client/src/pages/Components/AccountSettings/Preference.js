@@ -4,12 +4,12 @@ import { HeartOutline } from 'antd-mobile-icons'
 // import { DemoBlock } from 'demos'
 
 const marks = {
-    0: 0,
-    20: 20,
-    40: 40,
-    60: 60,
-    80: 80,
-    100: 100,
+    0: 'wear less',
+    20: '',
+    40: '',
+    60: '',
+    80: '',
+    100: 'wear more',
 }
 
 
