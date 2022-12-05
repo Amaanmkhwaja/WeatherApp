@@ -5,10 +5,11 @@
 import rainDropImg from '../../../images/rainDropIcon.png';
 import getHourly_Weekly_CurrentWeather from '../Helpers.js';
 import { useEffect, useState } from 'react';
-
+import PubSub from 'pubsub-js'
 const SevenDayDisplay = () => {
 
-    const addPopup = e => {
+    const addPopup = (data) => {
+        PubSub.publish('openPopup', data)
         let popup = document.querySelectorAll(".popupDisplay");
         popup[0].classList.remove("hidden");
     };
@@ -57,7 +58,7 @@ const SevenDayDisplay = () => {
                                 <div className="dailyDescription">
                                     {currentDay[5]}
                                 </div>
-                                <button onClick={addPopup} className="button-9">Recommended Fit</button>
+                                <button onClick={() => addPopup(((currentDay[4] - 32) * (5 / 9)).toFixed(0), ((currentDay[3] - 32) * (5 / 9)).toFixed(0))} className="button-9">Recommended Fit</button>
                             </div>
                         )
                     } else if (idx === 0) {
@@ -81,7 +82,7 @@ const SevenDayDisplay = () => {
                                 <div className="dailyDescription">
                                     {currentDay[5]}
                                 </div>
-                                <button onClick={addPopup} className="button-9">Recommended Fit</button>
+                                <button onClick={() => addPopup(((currentDay[4] - 32) * (5 / 9)).toFixed(0), ((currentDay[3] - 32) * (5 / 9)).toFixed(0))} className="button-9">Recommended Fit</button>
                             </div>
                         )
                     }
@@ -105,7 +106,7 @@ const SevenDayDisplay = () => {
                             <div className="dailyDescription">
                                     {currentDay[5]}
                             </div>
-                            <button onClick={addPopup} className="button-9">Recommended Fit</button>
+                            <button onClick={() => addPopup(((currentDay[4] - 32) * (5 / 9)).toFixed(0), ((currentDay[3] - 32) * (5 / 9)).toFixed(0))} className="button-9">Recommended Fit</button>
                         </div>
                     )
                 })}
