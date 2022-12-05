@@ -24,17 +24,18 @@ const Popup = () => {
       let arr = [];
       if (store.getState().value == 0) {
         list = {
-          12: "Thick down jacket",
-          10: "thin down jacket",
-          7: "cotton jacket",
-          6: "wool sweater",
-          4: "pizex",
-          3: "thin jacket",
-          2: "long sleeve",
-          1: "short sleeve",
+          34: "short sleeve",
+          30: "long sleeve",
+          28: "thin jacket",
+          26: "pizex",
+          24: "wool sweater",
+          22: "cotton jacket",
+          20: "thin down jacket",
+          8: "Thick down jacket",
+          0: "Wear as much as possible!!"
         };
 
-        arr = [12, 10, 7, 6, 4, 3, 2, 1];
+        arr = [34, 30, 28, 26, 24, 22, 20, 8, 0];
       } else if (store.getState().value == 20) {
         list = {
           16: "Thick down jacket",
@@ -47,7 +48,7 @@ const Popup = () => {
           1: "short sleeve",
         };
 
-        arr = [16, 12, 10, 7, 6, 4, 3, 2, 1];
+        arr = [16, 12, 10, 6, 4, 3, 2, 1];
       }
 
       for (let i = 0; i < arr.length; i++) {
